@@ -1,0 +1,48 @@
+// This is a generated file. Not intended for manual editing.
+package htable.psi.impl;
+
+import java.util.List;
+import org.jetbrains.annotations.*;
+import com.intellij.lang.ASTNode;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiElementVisitor;
+import com.intellij.psi.util.PsiTreeUtil;
+import static htable.psi.HTableTypes.*;
+import com.intellij.extapi.psi.ASTWrapperPsiElement;
+import htable.psi.*;
+
+public class HTableStringImpl extends ASTWrapperPsiElement implements HTableString {
+
+  public HTableStringImpl(@NotNull ASTNode node) {
+    super(node);
+  }
+
+  public void accept(@NotNull HTableVisitor visitor) {
+    visitor.visitString(this);
+  }
+
+  @Override
+  public void accept(@NotNull PsiElementVisitor visitor) {
+    if (visitor instanceof HTableVisitor) accept((HTableVisitor)visitor);
+    else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public List<HTableIdent> getIdentList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, HTableIdent.class);
+  }
+
+  @Override
+  @NotNull
+  public List<HTableNumb> getNumbList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, HTableNumb.class);
+  }
+
+  @Override
+  @NotNull
+  public List<HTablePunctuation> getPunctuationList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, HTablePunctuation.class);
+  }
+
+}

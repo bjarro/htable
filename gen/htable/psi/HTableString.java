@@ -1,0 +1,19 @@
+// This is a generated file. Not intended for manual editing.
+package htable.psi;
+
+import java.util.List;
+import org.jetbrains.annotations.*;
+import com.intellij.psi.PsiElement;
+
+public interface HTableString extends PsiElement {
+
+  @NotNull
+  List<HTableIdent> getIdentList();
+
+  @NotNull
+  List<HTableNumb> getNumbList();
+
+  @NotNull
+  List<HTablePunctuation> getPunctuationList();
+
+}

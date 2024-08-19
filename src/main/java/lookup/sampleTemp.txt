@@ -1,0 +1,24 @@
+COMMA    ,
+QUOTE    ’
+NUMBER    examples:  0 123 5.5  2.35 0.88888 1e20 2.2E-5
+EQUALS    =
+GTHAN    >
+MODULO    %
+LPAREN    (
+LBRACKET    [
+ENDTAGHEAD    </
+RBRACKET    ]
+COLON    :
+RPAREN    )
+MINUS    -
+DIVIDE    /
+TAGIDENT    [letter sequence immediately preceded by <]  examples:  <table  <th
+IDENT    [any sequence of letters]  examples:  table  description  value  th
+MULT    *
+PERIOD    .
+LTHAN    <
+SCOLON    ;
+EXP    **
+EOF    end-of-file token
+DQUOTE    ”
+PLUS    +

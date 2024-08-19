@@ -1,0 +1,33 @@
+<scheme name="MyColorScheme" version="142" parent_scheme="Default">
+    <attributes>
+        <option name="HTABLE_TABLE" value="ff00ff" /> <!-- Magenta -->
+        <option name="HTABLE_ROW" value="0000ff" /> <!-- Blue -->
+        <option name="HTABLE_HEADER" value="008000" /> <!-- Green -->
+        <option name="HTABLE_DATA" value="800080" /> <!-- Purple -->
+        <option name="HTABLE_DATA_CONTENT" value="ff4500" /> <!-- OrangeRed -->
+        <option name="HTABLE_EVALUATED_EXPRESSION" value="8b4513" /> <!-- SaddleBrown -->
+        <option name="HTABLE_NUMBER" value="00ced1" /> <!-- DarkTurquoise -->
+        <option name="HTABLE_PLUS" value="ff69b4" /> <!-- HotPink -->
+        <option name="HTABLE_MULT" value="ff4500" /> <!-- OrangeRed -->
+        <option name="HTABLE_COMMENT" value="808080" /> <!-- Gray -->
+        <option name="HTABLE_IDENTIFIER" value="4682b4" /> <!-- SteelBlue -->
+        <option name="HTABLE_COLON" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_COMMA" value="ffd700" /> <!-- Gold -->
+        <option name="HTABLE_DIVIDE" value="ff69b4" /> <!-- HotPink -->
+        <option name="HTABLE_DQUOTE" value="d2691e" /> <!-- Chocolate -->
+        <option name="HTABLE_EQUALS" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_EXP" value="ff69b4" /> <!-- HotPink -->
+        <option name="HTABLE_GTHAN" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_LBRACKET" value="daa520" /> <!-- GoldenRod -->
+        <option name="HTABLE_LPAREN" value="adff2f" /> <!-- GreenYellow -->
+        <option name="HTABLE_LTHAN" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_MINUS" value="ff69b4" /> <!-- HotPink -->
+        <option name="HTABLE_MODULO" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_PERIOD" value="ff6347" /> <!-- Tomato -->
+        <option name="HTABLE_QUOTE" value="d2691e" /> <!-- Chocolate -->
+        <option name="HTABLE_RBRRACKET" value="daa520" /> <!-- GoldenRod -->
+        <option name="HTABLE_RPAREN" value="adff2f" /> <!-- GreenYellow -->
+        <option name="HTABLE_SCOLON" value="ffd700" /> <!-- Gold -->
+        <option name="HTABLE_ESCAPED_QUOTE" value="d2691e" /> <!-- Chocolate -->
+    </attributes>
+</scheme>

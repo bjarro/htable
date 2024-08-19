@@ -1,0 +1,111 @@
+{
+  parserClass="htable.parser.HTableParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="HTable"
+  psiImplClassSuffix="Impl"
+  psiPackage="htable.psi"
+  psiImplPackage="htable.psi.impl"
+
+  elementTypeHolderClass="htable.psi.HTableTypes"
+  elementTypeClass="htable.psi.HTableElementType"
+  tokenTypeClass="htable.psi.HTableTokenType"
+
+
+  //allows parser generator to instantiate token classes
+  //allows JFLex generator to instantiate simple rules
+
+
+    tokens=[
+      IDENTIFIER ='regexp:[a-zA-Z]+'
+      NUMBER = 'regexp:([0-9]+\.[0-9]+[eE][+-]?[0-9]+)|(\d+(\.\d*)?)'
+      COMMENT = 'regexp:(<!--)(\.|.)*(-->)'
+      WHITE_SPACE = 'regexp:\r|\n|\r\n|[ \t\f]'
+
+      PLUS='+'
+      MINUS='-'
+      MULT='*'
+      DIVIDE='/'
+      MODULO='%'
+      EXP='**'
+
+      EQUALS='='
+      LPAREN='('
+      RPAREN=')'
+      GTHAN=">"
+      LTHAN="<"
+      LBRACKET="["
+      RBRRACKET="]"
+
+      SCOLON=';'
+      COMMA=","
+      QUOTE="'"
+      DQUOTE'\"'
+      COLON=":"
+      PERIOD="."
+    ]
+
+// Prevents left recursion by guaranteeing that expr expands to its subclass(children)
+// Grammar-Kit (PEG) does not support left recursion
+  extends(".*expr")=expr
+////  extends(".*")=commentable
+}
+
+//commentable ::= COMMENT* root COMMENT*
+
+root ::= '<table>' table '</table>'
+table ::= header_row row_list
+
+
+
+header_row ::=  '<tr>' header+ '</tr>'
+header ::=  '<th>' string '</th>'
+
+row_list ::= row*
+
+row ::=  '<tr>' data+ '</tr>'
+data ::=  '<td>' data_content '</td>'
+
+data_content ::= (string | evaluated_expression | non_evaluated_expression)
+
+string ::= (ident | numb | punctuation)+
+
+ident ::= IDENTIFIER
+numb ::= NUMBER
+
+punctuation ::= SCOLON | COMMA | QUOTE | DQUOTE | COLON | PERIOD
+
+evaluated_expression ::= EQUALS expr
+
+non_evaluated_expression ::= LBRACKET expr RBRRACKET
+
+
+expr ::= add_group
+  | mul_group
+  | unary_group
+  | exp_expr
+  | primary_group
+
+private unary_group ::= unary_plus_expr | unary_min_expr
+private mul_group ::= mul_expr | div_expr | modulo_expr
+private add_group ::= plus_expr | minus_expr
+private primary_group ::=  literal_expr | paren_expr
+
+// public rules for each expression
+unary_min_expr ::= MINUS expr
+unary_plus_expr ::= PLUS expr
+modulo_expr ::= expr MODULO expr
+div_expr ::= expr DIVIDE expr
+mul_expr ::= expr MULT expr
+minus_expr ::= expr MINUS expr
+plus_expr ::= expr PLUS expr
+exp_expr ::= expr (EXP expr)+
+paren_expr ::= LPAREN expr RPAREN
+
+
+literal_expr ::= NUMBER
+
+
+
+
