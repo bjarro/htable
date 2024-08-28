@@ -23,6 +23,7 @@
  - https://github.com/bjarro/htable/blob/19f988b4d689945592b74b870e81f3915cd2f81a/cs130Proj2019.doc
 
 ## Recent Changes:
+- Removed old tests, cleaned up project (lexer and parser jars untested)
 - Implemented Syntax Highlighter
 - Implemented sample annotation (HTML Tags)
 
